@@ -195,6 +195,7 @@ Visualization results are from TITAN test set.
 <td align="center"><img src="figure/plot_lora/clip_188_viz.png" width="400"><br>W/ Fine-tune</td>
 </tr>
 </table>
+
 ### Clip 192
 #### Reasoning:
 - W/O Fine-tune: 
