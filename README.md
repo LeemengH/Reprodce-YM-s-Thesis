@@ -97,7 +97,7 @@ ym_reproduce/
 * Output format:
 
   * Reasoning (CoT)
-  * 20 (x, y) waypoint pairs
+  * Ｗaypoint pairs (x, y)
 
 ---
 
@@ -126,14 +126,32 @@ python train_llava_lora.py \
 
 ## 3.3 Key Hyperparameters
 
-| Parameter         | Value   | Description             |
-| ----------------- | ------- | ----------------------- |
-| batch size        | 2       | per GPU                 |
-| grad accumulation | 16      | effective batch = 32    |
-| max length        | 4096    | supports long CoT       |
-| learning rate     | 2e-4    | LoRA training           |
-| lambda_kl         | 0.01    | controls hallucination  |
-| bf16              | enabled | A6000 / 5090 compatible |
+<table>
+<tr>
+<td width="55%">
+
+| Parameter | Value | Description |
+|------------|--------|-------------|
+| batch size | 2 | per GPU |
+| grad accumulation | 16 | effective batch = 32 |
+| max length | 4096 | supports long CoT |
+| learning rate | 2e-4 | LoRA training |
+| lambda_kl | 0.01 | controls hallucination |
+| bf16 | enabled | A6000 / 5090 compatible |
+
+</td>
+
+<td width="45%" align="center">
+
+<img src="results/training_curve.png" width="450">
+
+<br>
+
+Training Loss Curve
+
+</td>
+</tr>
+</table>
 
 ---
 
