@@ -143,11 +143,11 @@ python train_llava_lora.py \
 
 <td width="45%" align="center">
 
-<img src="results/training_curve.png" width="450">
+<img src="figure/lora_config.png" width="450">
 
 <br>
 
-Training Loss Curve
+LoRA and Training Configuration
 
 </td>
 </tr>
