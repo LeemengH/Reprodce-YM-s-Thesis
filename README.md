@@ -161,11 +161,10 @@ Evaluation includes:
 
 * Text metrics (reasoning quality)
 * Waypoint L2 error
-* Waypoint format success rate
 
 ---
 
-## 4.1 Example Result
+Example Result
 
 ```json
 {
@@ -175,6 +174,102 @@ Evaluation includes:
   "l2_distance_error": ...
 }
 ```
+
+
+
+---
+
+## 4.1 Running Batch Evaluation
+
+All evaluation scripts should be executed inside:
+
+```bash
+cd ./evaluation_script
+````
+
+---
+
+### 4.1.1 Without LoRA (2-shot ICL)
+
+This runs inference using the base model with in-context learning (2 examples).
+
+```bash
+python batch_infer_eval.py \
+  --no_lora \
+  --base_model llava-hf/llava-1.5-7b-hf \
+  --image_root ../dataset/images_anonymized \
+  --cue_json ../fill_json/titan_test_filled.json \
+  --nocue_json ../fill_json/titan_test_no_cue.json \
+  --num_samples 1 \
+  --seed 42 \
+  --text_only_icl \
+  --out_pred_json ./pred_batch_icl.json \
+  --out_eval_json ./eval_batch_icl.json \
+  --reasoning_only_text_metrics \
+  --l2_mode max
+```
+
+**Description:**
+
+* `--no_lora` → disables LoRA weights
+* `--text_only_icl` → uses reasoning examples only
+* `--reasoning_only_text_metrics` → evaluate text metrics on reasoning part only
+* `--l2_mode max` → L2 error computed at full resolution
+
+---
+
+### 4.1.2 With LoRA Weight
+
+This runs inference using the fine-tuned LoRA checkpoint.
+
+⚠ Make sure your LoRA checkpoint directory is correctly specified inside `batch_infer_eval.py`.
+
+```bash
+python batch_infer_eval.py \
+  --base_model llava-hf/llava-1.5-7b-hf \
+  --image_root ../dataset/images_anonymized \
+  --cue_json ../fill_json/titan_test_filled.json \
+  --nocue_json ../fill_json/titan_test_no_cue.json \
+  --num_samples 1 \
+  --seed 42 \
+  --bf16 \
+  --text_only_icl \
+  --out_pred_json ./pred_batch_lora.json \
+  --out_eval_json ./eval_batch_lora.json \
+  --reasoning_only_text_metrics \
+  --l2_mode max
+```
+
+**Additional Notes:**
+
+* `--bf16` recommended for A6000 / 5090
+* Do NOT use `--no_lora` if loading LoRA weights
+* Ensure correct checkpoint path inside script
+* Results will be saved as:
+
+  * `pred_batch_lora.json`
+  * `eval_batch_lora.json`
+
+---
+
+### 4.4.3 Output Files
+
+| File                 | Description                     |
+| -------------------- | ------------------------------- |
+| pred_batch_icl.json  | Predictions without LoRA        |
+| eval_batch_icl.json  | Evaluation metrics without LoRA |
+| pred_batch_lora.json | Predictions with LoRA           |
+| eval_batch_lora.json | Evaluation metrics with LoRA    |
+
+---
+
+This setup allows direct comparison between:
+
+* Base model + ICL
+* Fine-tuned LoRA model
+
+to verify reproduction fidelity and trajectory accuracy.
+
 
 ---
 
