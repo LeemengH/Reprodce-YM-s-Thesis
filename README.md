@@ -1,8 +1,5 @@
 # Reprodce-YM-s-Thesis
 ## Trajectory Planning in Dense Urban Environments: Utilizing Vision-Language Models to Learn Socially-Aware Behaviors for High-Uncertainty Scenarios
-````markdown
-# Reproduction of Senior’s LLaVA-based AD VLM Work
-
 This repository documents the reproduction of my senior’s work on trajectory-aware fine-tuning of **LLaVA-1.5-7B** for dense urban autonomous driving scenarios (TITAN dataset).
 
 The goal of this reproduction is:
@@ -182,12 +179,19 @@ You can replace the image paths with your own result images.
 
 ## 4.3 Comparison with Senior’s Reported Results
 
-| Metric   | Senior | Reproduced | Notes |
+| Metric   | Senior | Reproduced | Notes (w/o Fine-tune)|
 | -------- | ------ | ---------- | ----- |
-| BLEU-4   |        | 0.3312     |       |
-| ROUGE-L  |        | 0.3912     |       |
-| METEOR   |        | 0.5368     |       |
-| L2 Error |        |            |       |
+| BLEU-4   | 0.036  | 0.083      |       |
+| ROUGE-L  | 0.19   | 0.146      |       |
+| METEOR   | 0.37   | 0.197      |       |
+| L2 Error | 55     | 175        |       |
+
+| Metric   | Senior | Reproduced | Notes (w/ Fine-tune)|
+| -------- | ------ | ---------- | ----- |
+| BLEU-4   | 0.18   | 0.3312     |       |
+| ROUGE-L  | 0.38   | 0.3912     |       |
+| METEOR   | 0.52   | 0.5368     |       |
+| L2 Error | 31     | 51         |       |
 
 ---
 
