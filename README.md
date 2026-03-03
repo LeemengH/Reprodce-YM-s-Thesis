@@ -279,26 +279,26 @@ Visualization results are from TITAN test set.
 #### Reasoning:
 - W/O Fine-tune:
 > The ego vehicle should stop and wait.
-> **Pedestrians Crossing**: Objects 6 and 8 are walking on the road. Their safety is a priority, and the vehicle should yield to them.
-> **Parked Vehicles**: Objects 2, 5, and 7 are parked and do not obstruct the vehicle's path, but they contribute to a potentially narrow passage, emphasizing the need for careful navigation once it's safe to proceed.
-> The vehicle should remain stationary until the pedestrians have safely crossed and then proceed slowly, ensuring the path is clear.
+> - **Pedestrians Crossing**: Objects 6 and 8 are walking on the road. Their safety is a priority, and the vehicle should yield to them.
+> - **Parked Vehicles**: Objects 2, 5, and 7 are parked and do not obstruct the vehicle's path, but they contribute to a potentially narrow passage, emphasizing the need for careful navigation once it's safe to proceed.
+> - The vehicle should remain stationary until the pedestrians have safely crossed and then proceed slowly, ensuring the path is clear.
 - W/ Fine-tune:
 > The ego vehicle should proceed with caution. Here's the reasoning:
-> **Pedestrians**: There are two pedestrians (Objects 6 and 8) walking on the road. The vehicle should move forward slowly to signal its intent to proceed while ensuring it does not startle or endanger them.
-> **Parked Vehicles**: There are parked vehicles (Objects 0, 2, 5) on the sides, but they do not obstruct the path significantly.\n\n3. **Stopped Vehicle**: Object 4 is a stopped vehicle. The ego vehicle should ensure there is enough lateral clearance before passing it.
-> **Person Cleaning**: Object 7 is a person cleaning an object. The vehicle should maintain a safe distance and be prepared to stop if necessary.
-> **Action**: The ego vehicle should move forward slowly, maintaining a safe distance from pedestrians and being ready to stop if any pedestrian moves unpredictably. This approach ensures safety while making progress.
+> - **Pedestrians**: There are two pedestrians (Objects 6 and 8) walking on the road. The vehicle should move forward slowly to signal its intent to proceed while ensuring it does not startle or endanger them.
+> - **Parked Vehicles**: There are parked vehicles (Objects 0, 2, 5) on the sides, but they do not obstruct the path significantly.\n\n3. **Stopped Vehicle**: Object 4 is a stopped vehicle. The ego vehicle should ensure there is enough lateral clearance before passing it.
+> - **Person Cleaning**: Object 7 is a person cleaning an object. The vehicle should maintain a safe distance and be prepared to stop if necessary.
+> - **Action**: The ego vehicle should move forward slowly, maintaining a safe distance from pedestrians and being ready to stop if any pedestrian moves unpredictably. This approach ensures safety while making progress.
 - Ground truth:
 > In this scenario, the ego vehicle should proceed with caution. Here's the reasoning:
-> **Parked and Stopped Vehicles**:
+> - **Parked and Stopped Vehicles**:
 >  - There are parked vehicles on both sides of the road, and a stopped vehicle (Object 4) directly ahead. The ego vehicle should plan to overtake the stopped vehicle if there is enough lateral clearance and it is safe to do so.
->  **Pedestrians**:
+> - **Pedestrians**:
 >  - There are pedestrians (Objects 6, 7, and 8) on the road. Object 6 and Object 8 are walking, while Object 7 is cleaning and carrying something. The presence of pedestrians requires the ego vehicle to move slowly and be prepared to stop if necessary.
->  **Action Plan**:
+> - **Action Plan**:
 >  - **Slow Creep Forward**: The ego vehicle should slowly creep forward to signal its intent to proceed, ensuring it does not startle the pedestrians.
 >  - **Monitor Pedestrians**: Keep a close watch on the movements of the pedestrians, especially those walking on the road, to ensure their safety.
 >  - **Overtake if Safe**: If there is enough space and no immediate pedestrian risk, carefully overtake the stopped vehicle (Object 4).
-> By proceeding cautiously and being aware of pedestrian movements, the ego vehicle can safely navigate through this urban environment.
+> - By proceeding cautiously and being aware of pedestrian movements, the ego vehicle can safely navigate through this urban environment.
 #### Waypoints:
 <table>
 <tr>
