@@ -214,7 +214,7 @@ python batch_infer_eval.py \
 * `--no_lora` → disables LoRA weights
 * `--text_only_icl` → uses reasoning examples only
 * `--reasoning_only_text_metrics` → evaluate text metrics on reasoning part only
-* `--l2_mode max` → L2 error computed at full resolution
+* `--l2_mode max` → L2 max error computed (other option: mean)
 
 ---
 
