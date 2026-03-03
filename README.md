@@ -291,13 +291,13 @@ Visualization results are from TITAN test set.
 - Ground truth:
 > In this scenario, the ego vehicle should proceed with caution. Here's the reasoning:
 > - **Parked and Stopped Vehicles**:
->  - There are parked vehicles on both sides of the road, and a stopped vehicle (Object 4) directly ahead. The ego vehicle should plan to overtake the stopped vehicle if there is enough lateral clearance and it is safe to do so.
+>   - There are parked vehicles on both sides of the road, and a stopped vehicle (Object 4) directly ahead. The ego vehicle should plan to overtake the stopped vehicle if there is enough lateral clearance and it is safe to do so.
 > - **Pedestrians**:
->  - There are pedestrians (Objects 6, 7, and 8) on the road. Object 6 and Object 8 are walking, while Object 7 is cleaning and carrying something. The presence of pedestrians requires the ego vehicle to move slowly and be prepared to stop if necessary.
+>   - There are pedestrians (Objects 6, 7, and 8) on the road. Object 6 and Object 8 are walking, while Object 7 is cleaning and carrying something. The presence of pedestrians requires the ego vehicle to move slowly and be prepared to stop if necessary.
 > - **Action Plan**:
->  - **Slow Creep Forward**: The ego vehicle should slowly creep forward to signal its intent to proceed, ensuring it does not startle the pedestrians.
->  - **Monitor Pedestrians**: Keep a close watch on the movements of the pedestrians, especially those walking on the road, to ensure their safety.
->  - **Overtake if Safe**: If there is enough space and no immediate pedestrian risk, carefully overtake the stopped vehicle (Object 4).
+>   - **Slow Creep Forward**: The ego vehicle should slowly creep forward to signal its intent to proceed, ensuring it does not startle the pedestrians.
+>   - **Monitor Pedestrians**: Keep a close watch on the movements of the pedestrians, especially those walking on the road, to ensure their safety.
+>   - **Overtake if Safe**: If there is enough space and no immediate pedestrian risk, carefully overtake the stopped vehicle (Object 4).
 > - By proceeding cautiously and being aware of pedestrian movements, the ego vehicle can safely navigate through this urban environment.
 #### Waypoints:
 <table>
@@ -310,11 +310,28 @@ Visualization results are from TITAN test set.
 ### Clip 192
 #### Reasoning:
 - W/O Fine-tune: 
-> The ego vehicle should stop and wait.\n\nJustification:\n\n1. **Pedestrians on the Road**: Objects 1 and 5 are walking on the road, and the vehicle should yield to them.\n\n2. **Pedestrian on the Side**: Object 2 is standing on the side of the road, and the vehicle should be cautious while passing.\n\n3. **Parked Vehicles**: Objects 3 and 6 are parked, and the vehicle should proceed with caution, ensuring the path is clear.\n\nThe vehicle should remain stationary until the pedestrians have safely crossed and then proceed slowly, ensuring the path is clear.
+> The ego vehicle should stop and wait.
+> - Justification:
+>   - **Pedestrians on the Road**: Objects 1 and 5 are walking on the road, and the vehicle should yield to them.
+>   - **Pedestrian on the Side**: Object 2 is standing on the side of the road, and the vehicle should be cautious while passing.
+>   - **Parked Vehicles**: Objects 3 and 6 are parked, and the vehicle should proceed with caution, ensuring the path is clear.
+> - The vehicle should remain stationary until the pedestrians have safely crossed and then proceed slowly, ensuring the path is clear.
 - W/ Fine-tune: 
-> The ego vehicle should proceed with caution. Here's the reasoning:\n\n1. **Object 1 (Person Walking on the Road):** This person is walking on the road and carrying something. The vehicle should be cautious and ensure there is enough space to pass safely without startling or endangering the pedestrian.\n\n2. **Object 2 (Person Standing and Looking at Phone):** This person is standing and not directly in the path of the vehicle. The vehicle can continue moving slowly, maintaining a safe distance.\n\n3. **Object 4 (Person Walking and Talking in a Group):** This person is walking and talking in a group. The vehicle should be prepared to stop if necessary to ensure the safety of the group.\n\n4. **Object 5 (Person Standing and Looking at Phone):** This person is also standing and looking at their phone. The vehicle can continue moving slowly, as long as it is safe to do so.\n\n5. **Object 6 (Person Standing and Talking in a Group):** This person is part of a group and is also talking. The vehicle should be cautious and ready to stop if the group moves unpredictably.\n\n6. **Object 3 (Parked Vehicle):** This is not obstructing the path and can be ignored.\n\nThe vehicle should move forward slowly, maintaining a safe distance from pedestrians and being prepared to stop if any of them move unpredictably. This approach ensures safety while making progress.
+> The ego vehicle should proceed with caution. Here's the reasoning:
+> - **Object 1 (Person Walking on the Road):** This person is walking on the road and carrying something. The vehicle should be cautious and ensure there is enough space to pass safely without startling or endangering the pedestrian.
+> - **Object 2 (Person Standing and Looking at Phone):** This person is standing and not directly in the path of the vehicle. The vehicle can continue moving slowly, maintaining a safe distance.
+> - **Object 4 (Person Walking and Talking in a Group):** This person is walking and talking in a group. The vehicle should be prepared to stop if necessary to ensure the safety of the group.
+> - **Object 5 (Person Standing and Looking at Phone):** This person is also standing and looking at their phone. The vehicle can continue moving slowly, as long as it is safe to do so.
+> - **Object 6 (Person Standing and Talking in a Group):** This person is part of a group and is also talking. The vehicle should be cautious and ready to stop if the group moves unpredictably.
+> - **Object 3 (Parked Vehicle):** This is not obstructing the path and can be ignored.
+> - The vehicle should move forward slowly, maintaining a safe distance from pedestrians and being prepared to stop if any of them move unpredictably. This approach ensures safety while making progress.
 - Ground truth: 
-> The ego vehicle should proceed with caution. Here's the reasoning:\n\n1. **Object 1 (Person walking on the road)**: This person is carrying something with both hands, indicating they might not be fully aware of their surroundings. The vehicle should slow down and be prepared to stop if necessary.\n\n2. **Object 2 and Object 5 (People standing and looking into phones)**: These individuals are stationary and focused on their phones. They are not currently obstructing the path, but the vehicle should be cautious in case they move unexpectedly.\n\n3. **Object 3 (Parked two-wheeled vehicle)**: This is stationary and does not obstruct the path. The vehicle can safely pass by it.\n\n4. **Object 4 and Object 6 (People talking in a group)**: These individuals are on the side and not directly in the path. The vehicle should proceed slowly to ensure they remain out of the vehicle's path.\n\nGiven these observations, the ego vehicle should move forward slowly, signaling its intent to proceed while being ready to stop if any pedestrian moves unexpectedly into its path.
+> The ego vehicle should proceed with caution. Here's the reasoning:
+> - **Object 1 (Person walking on the road)**: This person is carrying something with both hands, indicating they might not be fully aware of their surroundings. The vehicle should slow down and be prepared to stop if necessary.
+> - **Object 2 and Object 5 (People standing and looking into phones)**: These individuals are stationary and focused on their phones. They are not currently obstructing the path, but the vehicle should be cautious in case they move unexpectedly.
+> - **Object 3 (Parked two-wheeled vehicle)**: This is stationary and does not obstruct the path. The vehicle can safely pass by it.
+> - **Object 4 and Object 6 (People talking in a group)**: These individuals are on the side and not directly in the path. The vehicle should proceed slowly to ensure they remain out of the vehicle's path.
+> - Given these observations, the ego vehicle should move forward slowly, signaling its intent to proceed while being ready to stop if any pedestrian moves unexpectedly into its path.
 #### Waypoints:
 <table>
 <tr>
