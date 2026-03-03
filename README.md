@@ -225,19 +225,19 @@ This runs inference using the fine-tuned LoRA checkpoint.
 ⚠ Make sure your LoRA checkpoint directory is correctly specified inside `batch_infer_eval.py`.
 
 ```bash
-python batch_infer_eval.py \
+python batch_infer_eval.py   \
+  --use_lora \
   --base_model llava-hf/llava-1.5-7b-hf \
+  --adapter_path ../ckpt_lambda0pp1_with_eval \
   --image_root ../dataset/images_anonymized \
   --cue_json ../fill_json/titan_test_filled.json \
   --nocue_json ../fill_json/titan_test_no_cue.json \
-  --num_samples 1 \
+  --num_samples 51 \
   --seed 42 \
-  --bf16 \
-  --text_only_icl \
-  --out_pred_json ./pred_batch_lora.json \
-  --out_eval_json ./eval_batch_lora.json \
+  --out_pred_json ./pred_batch_eval.json \
+  --out_eval_json ./eval_batch_eval.json \
   --reasoning_only_text_metrics \
-  --l2_mode max
+  --l2_mode max 
 ```
 
 **Additional Notes:**
