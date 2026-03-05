@@ -285,7 +285,8 @@ Visualization results are from TITAN test set.
 - W/ Fine-tune:
 > The ego vehicle should proceed with caution. Here's the reasoning:
 > - **Pedestrians**: There are two pedestrians (Objects 6 and 8) walking on the road. The vehicle should move forward slowly to signal its intent to proceed while ensuring it does not startle or endanger them.
-> - **Parked Vehicles**: There are parked vehicles (Objects 0, 2, 5) on the sides, but they do not obstruct the path significantly.\n\n3. **Stopped Vehicle**: Object 4 is a stopped vehicle. The ego vehicle should ensure there is enough lateral clearance before passing it.
+> - **Parked Vehicles**: There are parked vehicles (Objects 0, 2, 5) on the sides, but they do not obstruct the path significantly.
+> - **Stopped Vehicle**: Object 4 is a stopped vehicle. The ego vehicle should ensure there is enough lateral clearance before passing it.
 > - **Person Cleaning**: Object 7 is a person cleaning an object. The vehicle should maintain a safe distance and be prepared to stop if necessary.
 > - **Action**: The ego vehicle should move forward slowly, maintaining a safe distance from pedestrians and being ready to stop if any pedestrian moves unpredictably. This approach ensures safety while making progress.
 - Ground truth:
