@@ -343,20 +343,21 @@ Visualization results are from TITAN test set.
 ---
 
 ## 4.3 Comparison with Senior’s Reported Results
+*w/o Fine-tune*
+| Metric   | Senior | Reproduced |
+| -------- | ------ | ---------- |
+| BLEU-4   | 0.036  | 0.083      |       
+| ROUGE-L  | 0.19   | 0.146      |       
+| METEOR   | 0.37   | 0.197      |       
+| L2 Error | 55     | 175        |
 
-| Metric   | Senior | Reproduced | Notes (w/o Fine-tune)|
-| -------- | ------ | ---------- | ----- |
-| BLEU-4   | 0.036  | 0.083      |       |
-| ROUGE-L  | 0.19   | 0.146      |       |
-| METEOR   | 0.37   | 0.197      |       |
-| L2 Error | 55     | 175        |       |
-
-| Metric   | Senior | Reproduced | Notes (w/ Fine-tune)|
-| -------- | ------ | ---------- | ----- |
-| BLEU-4   | 0.18   | 0.3312     |       |
-| ROUGE-L  | 0.38   | 0.3912     |       |
-| METEOR   | 0.52   | 0.5368     |       |
-| L2 Error | 31     | 51         |       |
+*w/ Fine-tune*
+| Metric   | Senior | Reproduced(w/o mask) | Reproduced(w/ mask)|
+| -------- | ------ | ---------------------| -------------------|
+| BLEU-4   | 0.18   | 0.3312               | 0.2576             |
+| ROUGE-L  | 0.38   | 0.3912               | 0.3363             |
+| METEOR   | 0.52   | 0.5368               | 0.4683             |
+| L2 Error | 31     | 51                   | 53                 |
 
 ---
 
