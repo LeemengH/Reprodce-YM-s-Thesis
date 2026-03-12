@@ -358,7 +358,7 @@ Visualization results are from TITAN test set.
 | BLEU-4   | 0.18   | 0.3312               | 0.2576             |
 | ROUGE-L  | 0.38   | 0.3912               | 0.3363             |
 | METEOR   | 0.52   | 0.5368               | 0.4683             |
-| L2 Error | 31     | 51                   | 53                 |
+| L2 Error | 31     | 59                   | 65                 |
 
 ---
 
