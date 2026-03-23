@@ -344,6 +344,8 @@ Visualization results are from TITAN test set.
 ---
 
 ## 4.3 Comparison with Senior’s Reported Results
+
+### LLaVA(7B)
 *w/o Fine-tune*
 | Metric   | Senior | Reproduced |
 | -------- | ------ | ---------- |
@@ -359,6 +361,15 @@ Visualization results are from TITAN test set.
 | ROUGE-L  | 0.38   | 0.3912               | 0.3363             |
 | METEOR   | 0.52   | 0.5368               | 0.4683             |
 | L2 Error | 31     | 59                   | 65                 |
+
+### LLaVA-NeXT(7B)
+*w/ Fine-tune*
+| Metric   | Senior | Reproduced(w/o mask) | Reproduced(w/ mask)|
+| -------- | ------ | ---------------------| -------------------|
+| BLEU-4   | 0.195  | 0.3141               | 0.xxxx             |
+| ROUGE-L  | 0.40   | 0.3779               | 0.xxxx             |
+| METEOR   | 0.55   | 0.5314               | 0.xxxx             |
+| L2 Error | 29     | 54                   | xx                 |
 
 ---
 
@@ -429,5 +440,3 @@ This reproduction strictly follows the original methodology to:
 
 This serves as the foundation for subsequent lightweighting and vision token pruning research.
 
-```
-```
